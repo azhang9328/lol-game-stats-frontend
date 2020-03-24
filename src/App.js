@@ -1,13 +1,21 @@
-import React from 'react';
-import { Button } from 'antd';
+import React, {Component} from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
+import Header from './containers/Header'
+import {Layout} from 'antd';
 
-function App() {
-  return (
-    <div className="App">
-    <Button type="primary">Button</Button>
-  </div>
-  );
+class App extends Component {
+  state = {
+    loggedIn: false
+  }
+
+  render(){
+    return(
+      <Layout>
+        <Header loggedIn={this.state.loggedIn}/>
+      </Layout>
+    )
+  }
 }
 
 export default App;
